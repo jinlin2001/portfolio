@@ -15,7 +15,7 @@ function App() {
               className='btn btn-sm active'
               data-bs-toggle='tab'
               data-bs-target='#chatbox'>
-              ChatBox
+              ChatBox&nbsp;
             </button>
           </li>
           <li className='nav-item'>
@@ -23,7 +23,7 @@ function App() {
               className='btn btn-sm'
               data-bs-toggle='tab'
               data-bs-target='#quick-route'>
-              Router
+              Router&nbsp;
             </button>
           </li>
           <li className='nav-item'>
@@ -31,7 +31,7 @@ function App() {
               className='btn btn-sm'
               data-bs-toggle='tab'
               data-bs-target='#arbitrage'>
-              $Boost
+              $Boost&nbsp;
             </button>
           </li>
         </ul>
