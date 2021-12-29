@@ -7,32 +7,30 @@ import {
   TAB_CARD_BODY_FLEX,
   TAB_CARD_BODY_NAV,
   TECH_CARD_BORDERLESS,
+  TECH_CARD_BODY,
   TECH_CARD_BODY_BORDER,
-  TECH_CARD_BODY_FLEX,
   TECH_CARD_IMG,
   TECH_CARD,
-  TECH_CARD_BODY,
-  LIST_GROUP_ITEM,
-  LIST_GROUP,
   CARD_FOOTER,
+  LIST_GROUP,
+  LIST_GROUP_ITEM,
 } from './constants';
 import { scrollSpy } from './utility';
 
-function ChatBox() {
+function Arbitrager() {
   const ul_ref = useRef<HTMLUListElement>(null);
   const body_ref = useRef<HTMLDivElement>(null);
   const a_ref = useRef<HTMLAnchorElement>();
 
   useEffect(() => {
     a_ref.current = ul_ref.current!.querySelector(
-      '#chatbox-about-a'
+      '#booster-about-a'
     ) as HTMLAnchorElement;
     body_ref.current!.addEventListener(
       'scroll',
       scrollSpy.bind(null, body_ref, ul_ref, a_ref)
     );
   }, []);
-
   return (
     <div className={TAB_CARD}>
       <div className={TAB_CARD_BODY_FLEX}>
@@ -40,32 +38,29 @@ function ChatBox() {
           <li className='nav-item'>
             <a
               className='btn btn-sm active'
-              href='#chatbox-about'
-              id='chatbox-about-a'>
+              href='#booster-about'
+              id='booster-about-a'>
               About
             </a>
           </li>
           <li className='nav-item'>
             <a
               className='btn btn-sm'
-              href='#chatbox-schematic'
-              id='chatbox-schematic-a'>
-              SCHEM
-            </a>
-          </li>
-          <li className='nav-item'>
-            <a
-              className='btn btn-sm'
-              href='#chatbox-techs'
-              id='chatbox-techs-a'>
+              href='#booster-techs'
+              id='booster-techs-a'>
               TECHs
             </a>
           </li>
           <li className='nav-item'>
+            <a className='btn btn-sm' href='#booster-algo' id='booster-algo-a'>
+              ALGO
+            </a>
+          </li>
+          <li className='nav-item'>
             <a
               className='btn btn-sm'
-              href='#chatbox-captures'
-              id='chatbox-captures-a'>
+              href='#booster-captures'
+              id='booster-captures-a'>
               IMGs
             </a>
           </li>
@@ -74,59 +69,54 @@ function ChatBox() {
           <div className={TAB_CARD}>
             <div className={TAB_CARD_BODY} ref={body_ref}>
               <div
-                id='chatbox-about'
                 className='container-fluid'
-                data-target='chatbox-about-a'>
+                id='booster-about'
+                data-target='booster-about-a'>
                 <h6>App Overview</h6>
                 <p>
-                  This is a real-time chat application. Users are allowed to
-                  create one or more rooms and invite friends to join chat. Each
-                  room is isolated and guarded with Firebase Security Rules.
+                  This web application fetches currency exchange rates from
+                  Frankfurter API. Response data is then parsed and analyzed to
+                  solve for arbitrage profit opportunities.
                 </p>
-                <p className='mb-0'>
-                  Other app features include new user signup, login,
-                  logout, password reset, search new friends, and add new friends.
-                  App scripts are trans-piled targeting latest browsers.
-                  Internet Explorer is not supported.
+                <p>
+                  Frankfurter API tracks 33 world recognized currencies
+                  published by the European Central Bank. According to the API
+                  documentation, exchange rates are updated daily around 4 PM
+                  central easter time.
                 </p>
+                <p>
+                  Other application features include filter, edit, and import
+                  data in JSON file. Application scripts are trans-piled
+                  targeting latest browsers. Internet Explorer is not supported.
+                </p>
+                <span>
+                  Support import JSON file with data structure like the
+                  following sample.
+                </span>
+                <pre className='mb-0'>
+                  {`{
+  "USD": {
+    "EUR": 0.986,
+    "GBP": 0.657
+  },
+  "EUR": {
+    "USD": 1.349,
+    "GBP": 0.888
+  },
+  "GBP": {
+    "USD": 1.521,
+    "EUR": 1.126
+  }
+}`}
+                </pre>
               </div>
+
               <div
-                id='chatbox-schematic'
                 className='container-fluid py-5'
-                data-target='chatbox-schematic-a'>
-                <h6>Schematic Diagram</h6>
-                <div className='row'>
-                  <div className='col-12'>
-                    <div className='card'>
-                      <img
-                        src='chatbox-schematic.png'
-                        alt='chatbox schematic'
-                        className='card-img-top'
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                id='chatbox-techs'
-                className='container-fluid pb-5'
-                data-target='chatbox-techs-a'>
+                id='booster-techs'
+                data-target='booster-techs-a'>
                 <h6>Technologies Used</h6>
                 <div className={DIV_TECH_ROW}>
-                  <div className='col'>
-                    <div className={TECH_CARD_BORDERLESS}>
-                      <img
-                        src='firebase-icon.svg'
-                        alt='firebase'
-                        className={TECH_CARD_IMG}
-                      />
-                      <div className={TECH_CARD_BODY_FLEX}>
-                        <small className='badge text-wrap'>
-                          Authentication, Cloud Functions, Realtime DB
-                        </small>
-                      </div>
-                    </div>
-                  </div>
                   <div className='col'>
                     <div className={TECH_CARD_BORDERLESS}>
                       <img
@@ -135,7 +125,7 @@ function ChatBox() {
                         className={TECH_CARD_IMG}
                       />
                       <div className={TECH_CARD_BODY_BORDER}>
-                        <small className='badge'>React</small>
+                        <small className='badge'>ReactJS</small>
                       </div>
                     </div>
                   </div>
@@ -148,32 +138,6 @@ function ChatBox() {
                       />
                       <div className={TECH_CARD_BODY_BORDER}>
                         <small className='badge'>Typescript</small>
-                      </div>
-                    </div>
-                  </div>
-                  <div className='col'>
-                    <div className={TECH_CARD_BORDERLESS}>
-                      <img
-                        src='nodejs-icon.svg'
-                        alt='nodejs'
-                        className={TECH_CARD_IMG}
-                      />
-                      <div className={TECH_CARD_BODY_FLEX}>
-                        <small className='badge'>NodeJS</small>
-                      </div>
-                    </div>
-                  </div>
-                  <div className='col'>
-                    <div className={TECH_CARD_BORDERLESS}>
-                      <img
-                        src='mongodb-icon.svg'
-                        alt='mongodb'
-                        className={TECH_CARD_IMG}
-                      />
-                      <div className={TECH_CARD_BODY_FLEX}>
-                        <small className='badge text-wrap'>
-                          MongoDB Atlas, Mongoose
-                        </small>
                       </div>
                     </div>
                   </div>
@@ -215,16 +179,43 @@ function ChatBox() {
                   </div>
                 </div>
               </div>
+
               <div
-                id='chatbox-captures'
+                className='container-fluid pb-5'
+                id='booster-algo'
+                data-target='booster-algo-a'>
+                <h6>Algorithm Brief</h6>
+                <p>
+                  To solve for arbitrage profit opportunity, API data is parsed
+                  and modeled as a graph, with exchange rates as edge weights.
+                  Then traversed the graph to find a cycle with cost greater than
+                  1. A cycle cost is the multiplications product of the edges
+                  weight in the cycle.
+                </p>
+                <p>
+                  Implemented Bellman-Ford algorithm for negative graph cycle
+                  detection. API data is translated such that a positive cycle
+                  becomes a negative cycle.
+                </p>
+                <p className='mb-0'>
+                  API data is transformed by applying the math log function then
+                  negation. Applying math log function allows the use of
+                  addition instead of multiplication in calculating cycle cost.
+                  And negation change a positive weight cycle to a negative
+                  weight cycle.
+                </p>
+              </div>
+
+              <div
                 className='container-fluid pb-1'
-                data-target='chatbox-captures-a'>
+                id='booster-captures'
+                data-target='booster-captures-a'>
                 <h6>Screen Captures</h6>
                 <div className='row row-cols-1 gy-3'>
-                  <div className='col col-lg-10 offset-lg-1'>
+                  <div className='col-12 col-md-10 offset-md-1'>
                     <div className={TECH_CARD}>
                       <img
-                        src='chatbox-full.png'
+                        src='arbit-1.png'
                         alt='fullscreen layout'
                         className='card-img-top'
                       />
@@ -233,27 +224,15 @@ function ChatBox() {
                       </div>
                     </div>
                   </div>
-                  <div className='col-10 offset-1 col-md-8 offset-md-2'>
+                  <div className='col-12 col-md-10 offset-md-1'>
                     <div className={TECH_CARD}>
                       <img
-                        src='chatbox-mid.png'
-                        alt='midscreen layout'
+                        src='arbit-2.png'
+                        alt='fullscreen layout 2'
                         className='card-img-top'
                       />
                       <div className={TECH_CARD_BODY}>
-                        <small className='badge'>Mid-Screen Layout</small>
-                      </div>
-                    </div>
-                  </div>
-                  <div className='col-8 offset-2 col-md-6 offset-md-3'>
-                    <div className={TECH_CARD}>
-                      <img
-                        src='chatbox-mobile.png'
-                        alt='mobile layout'
-                        className='card-img-top'
-                      />
-                      <div className={TECH_CARD_BODY}>
-                        <small className='badge'>Mobile Layout</small>
+                        <small className='badge'>With Toast Notification</small>
                       </div>
                     </div>
                   </div>
@@ -263,20 +242,22 @@ function ChatBox() {
             <div className={CARD_FOOTER}>
               <div className={LIST_GROUP}>
                 <a
-                  href='https://chatbox-3c9c2.firebaseapp.com/'
+                  href='https://arbitrage-43861.firebaseapp.com/'
                   className={LIST_GROUP_ITEM}
                   target='_blank'
                   rel='noreferrer noopener'>
-                  <span className='fw-bold'>Live app:&nbsp;</span>
-                  https://chatbox-3c9c2.firebaseapp.com/
+                  <span className='badge'>
+                    Live App:&nbsp; https://arbitrage-43861.firebaseapp.com/
+                  </span>
                 </a>
                 <a
-                  href='https://github.com/jinlin2001/chatbox'
+                  href='https://github.com/jinlin2001/arbitrage'
                   className={LIST_GROUP_ITEM}
                   target='_blank'
                   rel='noreferrer noopener'>
-                  <span className='fw-bold'>Github:&nbsp;</span>
-                  https://github.com/jinlin2001/chatbox
+                  <span className='badge'>
+                    GitHub:&nbsp; https://github.com/jinlin2001/arbitrage
+                  </span>
                 </a>
               </div>
             </div>
@@ -286,4 +267,4 @@ function ChatBox() {
     </div>
   );
 }
-export default ChatBox;
+export default Arbitrager;

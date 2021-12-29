@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Arbitrage from './Arbitrage';
-import ChatBox from './ChatBox';
+import Arbitrager from './Arbitrager';
+import MultiChat from './MultiChat';
 import { TAB_CARD_BODY } from './constants';
 import Router from './Router';
 
@@ -15,7 +15,7 @@ function App() {
               className='btn btn-sm active'
               data-bs-toggle='tab'
               data-bs-target='#chatbox'>
-              ChatBox&nbsp;
+              MultiChat&nbsp;
             </button>
           </li>
           <li className='nav-item'>
@@ -31,7 +31,7 @@ function App() {
               className='btn btn-sm'
               data-bs-toggle='tab'
               data-bs-target='#arbitrage'>
-              $Boost&nbsp;
+              Arbitrager&nbsp;
             </button>
           </li>
         </ul>
@@ -39,13 +39,13 @@ function App() {
       <div className={TAB_CARD_BODY}>
         <div className='tab-content h-100'>
           <div className='tab-pane fade show active h-100' id='chatbox'>
-            <ChatBox />
+            <MultiChat />
           </div>
           <div className='tab-pane fade h-100' id='quick-route'>
             <Router />
           </div>
           <div className='tab-pane fade h-100' id='arbitrage'>
-            <Arbitrage />
+            <Arbitrager />
           </div>
         </div>
       </div>

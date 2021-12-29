@@ -7,30 +7,32 @@ import {
   TAB_CARD_BODY_FLEX,
   TAB_CARD_BODY_NAV,
   TECH_CARD_BORDERLESS,
-  TECH_CARD_BODY,
   TECH_CARD_BODY_BORDER,
+  TECH_CARD_BODY_FLEX,
   TECH_CARD_IMG,
   TECH_CARD,
-  CARD_FOOTER,
-  LIST_GROUP,
+  TECH_CARD_BODY,
   LIST_GROUP_ITEM,
+  LIST_GROUP,
+  CARD_FOOTER,
 } from './constants';
 import { scrollSpy } from './utility';
 
-function Arbitrage() {
+function MultiChat() {
   const ul_ref = useRef<HTMLUListElement>(null);
   const body_ref = useRef<HTMLDivElement>(null);
   const a_ref = useRef<HTMLAnchorElement>();
 
   useEffect(() => {
     a_ref.current = ul_ref.current!.querySelector(
-      '#booster-about-a'
+      '#chatbox-about-a'
     ) as HTMLAnchorElement;
     body_ref.current!.addEventListener(
       'scroll',
       scrollSpy.bind(null, body_ref, ul_ref, a_ref)
     );
   }, []);
+
   return (
     <div className={TAB_CARD}>
       <div className={TAB_CARD_BODY_FLEX}>
@@ -38,29 +40,32 @@ function Arbitrage() {
           <li className='nav-item'>
             <a
               className='btn btn-sm active'
-              href='#booster-about'
-              id='booster-about-a'>
+              href='#chatbox-about'
+              id='chatbox-about-a'>
               About
             </a>
           </li>
           <li className='nav-item'>
             <a
               className='btn btn-sm'
-              href='#booster-techs'
-              id='booster-techs-a'>
-              TECHs
-            </a>
-          </li>
-          <li className='nav-item'>
-            <a className='btn btn-sm' href='#booster-algo' id='booster-algo-a'>
-              ALGO
+              href='#chatbox-schematic'
+              id='chatbox-schematic-a'>
+              SCHEM
             </a>
           </li>
           <li className='nav-item'>
             <a
               className='btn btn-sm'
-              href='#booster-captures'
-              id='booster-captures-a'>
+              href='#chatbox-techs'
+              id='chatbox-techs-a'>
+              TECHs
+            </a>
+          </li>
+          <li className='nav-item'>
+            <a
+              className='btn btn-sm'
+              href='#chatbox-captures'
+              id='chatbox-captures-a'>
               IMGs
             </a>
           </li>
@@ -69,55 +74,60 @@ function Arbitrage() {
           <div className={TAB_CARD}>
             <div className={TAB_CARD_BODY} ref={body_ref}>
               <div
+                id='chatbox-about'
                 className='container-fluid'
-                id='booster-about'
-                data-target='booster-about-a'>
+                data-target='chatbox-about-a'>
                 <h6>App Overview</h6>
                 <p>
-                  This web app outputs the potential currency exchanges that has
-                  a profit. Exchange sequences are generated based on daily
-                  rates published by Frankfurter API.
+                  This is a real-time multi-chat application. Users are allowed
+                  to create one or more rooms and invite friends to join chat.
+                  Each room is isolated and access protected with Firebase
+                  Security Rules.
                 </p>
-                <p>
-                  Frankfurter API tracks 33 world known currency exchange rates
-                  published by the European Central Bank. According to the API
-                  documentation, exchange rates are updated daily around 4 PM
-                  Central Easter Time.
+                <p className='mb-0'>
+                  Other application features include new user signup, login,
+                  logout, password reset, search and add new friends.
+                  Application scripts are trans-piled targeting latest browsers.
+                  Internet Explorer is not supported.
                 </p>
-                <p>
-                  Other app features include filtering data, editing data,
-                  importing and parsing data in file. App scripts are
-                  trans-piled targeting latest browsers. Internet Explorer is
-                  not supported.
-                </p>
-                <span>
-                  Support importing and parsing file with data structure like
-                  the following sample.
-                </span>
-                <pre className='mb-0'>
-                  {`{
-  "USD": {
-    "EUR": 0.986,
-    "GBP": 0.657
-  },
-  "EUR": {
-    "USD": 1.349,
-    "GBP": 0.888
-  },
-  "GBP": {
-    "USD": 1.521,
-    "EUR": 1.126
-  }
-}`}
-                </pre>
               </div>
-
               <div
+                id='chatbox-schematic'
                 className='container-fluid py-5'
-                id='booster-techs'
-                data-target='booster-techs-a'>
+                data-target='chatbox-schematic-a'>
+                <h6>Schematic Diagram</h6>
+                <div className='row'>
+                  <div className='col-12'>
+                    <div className='card'>
+                      <img
+                        src='chatbox-schematic.png'
+                        alt='chatbox schematic'
+                        className='card-img-top'
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                id='chatbox-techs'
+                className='container-fluid pb-5'
+                data-target='chatbox-techs-a'>
                 <h6>Technologies Used</h6>
                 <div className={DIV_TECH_ROW}>
+                  <div className='col'>
+                    <div className={TECH_CARD_BORDERLESS}>
+                      <img
+                        src='firebase-icon.svg'
+                        alt='firebase'
+                        className={TECH_CARD_IMG}
+                      />
+                      <div className={TECH_CARD_BODY_FLEX}>
+                        <small className='badge text-wrap'>
+                          Authentication, Cloud Functions, Realtime DB
+                        </small>
+                      </div>
+                    </div>
+                  </div>
                   <div className='col'>
                     <div className={TECH_CARD_BORDERLESS}>
                       <img
@@ -126,7 +136,7 @@ function Arbitrage() {
                         className={TECH_CARD_IMG}
                       />
                       <div className={TECH_CARD_BODY_BORDER}>
-                        <small className='badge'>React</small>
+                        <small className='badge'>ReactJS</small>
                       </div>
                     </div>
                   </div>
@@ -139,6 +149,32 @@ function Arbitrage() {
                       />
                       <div className={TECH_CARD_BODY_BORDER}>
                         <small className='badge'>Typescript</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='col'>
+                    <div className={TECH_CARD_BORDERLESS}>
+                      <img
+                        src='nodejs-icon.svg'
+                        alt='nodejs'
+                        className={TECH_CARD_IMG}
+                      />
+                      <div className={TECH_CARD_BODY_FLEX}>
+                        <small className='badge'>NodeJS</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='col'>
+                    <div className={TECH_CARD_BORDERLESS}>
+                      <img
+                        src='mongodb-icon.svg'
+                        alt='mongodb'
+                        className={TECH_CARD_IMG}
+                      />
+                      <div className={TECH_CARD_BODY_FLEX}>
+                        <small className='badge text-wrap'>
+                          MongoDB Atlas, Mongoose
+                        </small>
                       </div>
                     </div>
                   </div>
@@ -180,41 +216,16 @@ function Arbitrage() {
                   </div>
                 </div>
               </div>
-
               <div
-                className='container-fluid pb-5'
-                id='booster-algo'
-                data-target='booster-algo-a'>
-                <h6>Algorithm Brief</h6>
-                <p>
-                  API data is parsed and modeled as a graph, with exchange rates
-                  as edge weights. The goal is to find a cycle with cost greater
-                  than 1. Cycle cost is the multiplication product of the edges
-                  weight in the cycle.
-                </p>
-                <p>
-                  Implemented Bellman-Ford algorithm for cycle detection in the
-                  graph. API data is transformed such that detecting a negative
-                  cycle in the graph is sufficient to produce a solution.
-                </p>
-                <p className='mb-0'>
-                  API data is transformed by applying the math log function then
-                  negation. Applying negation changes a positive cycle to a
-                  negative cycle. Applying math log function allows the use of
-                  addition instead of multiplication in cost calculation.
-                </p>
-              </div>
-
-              <div
+                id='chatbox-captures'
                 className='container-fluid pb-1'
-                id='booster-captures'
-                data-target='booster-captures-a'>
+                data-target='chatbox-captures-a'>
                 <h6>Screen Captures</h6>
                 <div className='row row-cols-1 gy-3'>
-                  <div className='col-12 col-md-10 offset-md-1'>
+                  <div className='col col-lg-10 offset-lg-1'>
                     <div className={TECH_CARD}>
                       <img
-                        src='arbit-1.png'
+                        src='chatbox-full.png'
                         alt='fullscreen layout'
                         className='card-img-top'
                       />
@@ -223,15 +234,27 @@ function Arbitrage() {
                       </div>
                     </div>
                   </div>
-                  <div className='col-12 col-md-10 offset-md-1'>
+                  <div className='col-10 offset-1 col-md-8 offset-md-2'>
                     <div className={TECH_CARD}>
                       <img
-                        src='arbit-2.png'
-                        alt='fullscreen layout 2'
+                        src='chatbox-mid.png'
+                        alt='midscreen layout'
                         className='card-img-top'
                       />
                       <div className={TECH_CARD_BODY}>
-                        <small className='badge'>With Toast Notification</small>
+                        <small className='badge'>Mid-Screen Layout</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='col-8 offset-2 col-md-6 offset-md-3'>
+                    <div className={TECH_CARD}>
+                      <img
+                        src='chatbox-mobile.png'
+                        alt='mobile layout'
+                        className='card-img-top'
+                      />
+                      <div className={TECH_CARD_BODY}>
+                        <small className='badge'>Mobile Layout</small>
                       </div>
                     </div>
                   </div>
@@ -241,20 +264,22 @@ function Arbitrage() {
             <div className={CARD_FOOTER}>
               <div className={LIST_GROUP}>
                 <a
-                  href='https://arbitrage-43861.firebaseapp.com/'
+                  href='https://chatbox-3c9c2.firebaseapp.com/'
                   className={LIST_GROUP_ITEM}
                   target='_blank'
                   rel='noreferrer noopener'>
-                  <span className='fw-bold'>Live app:&nbsp;</span>
-                  https://arbitrage-43861.firebaseapp.com/
+                  <span className='badge'>
+                    Live App:&nbsp; https://chatbox-3c9c2.firebaseapp.com/
+                  </span>
                 </a>
                 <a
-                  href='https://github.com/jinlin2001/arbitrage'
+                  href='https://github.com/jinlin2001/chatbox'
                   className={LIST_GROUP_ITEM}
                   target='_blank'
                   rel='noreferrer noopener'>
-                  <span className='fw-bold'>Github:&nbsp;</span>
-                  https://github.com/jinlin2001/arbitrage
+                  <span className='badge'>
+                    GitHub:&nbsp; https://github.com/jinlin2001/chatbox
+                  </span>
                 </a>
               </div>
             </div>
@@ -264,4 +289,4 @@ function Arbitrage() {
     </div>
   );
 }
-export default Arbitrage;
+export default MultiChat;

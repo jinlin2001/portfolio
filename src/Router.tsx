@@ -72,19 +72,20 @@ function Router() {
                 data-target='route-about-a'>
                 <h6>App Overview</h6>
                 <p>
-                  Application was inspired by a friend helping food delivery at
-                  a busy restaurant. Often, he must manually sort out delivering
-                  sequences and may not be the most efficient sequence. This web
-                  app is intent to solve the problem.
+                  This web application produces the shortest distance route from
+                  inputs of an origin, a destination and one or more stops.
+                  Application was inspired by food delivery personnel at
+                  restaurants, this web application can help plan the best route
+                  by distance.
                 </p>
                 <p>
-                  The app calls Google Distance Matrix API and Geocoding API for
-                  distance metrics between user input addresses. With the
-                  responded metrics, app then runs implemented algorithm to
-                  output the shortest distance path.
+                  The application calls Google Distance Matrix API and Geocoding
+                  API for distance metrics. With response metrics, application
+                  then runs implemented algorithm to solve for shortest distance
+                  route.
                 </p>
                 <p className='mb-0'>
-                  App scripts are trans-piled targeting latest browsers.
+                  Application scripts are trans-piled targeting latest browsers.
                   Internet Explorer is not supported.
                 </p>
               </div>
@@ -117,7 +118,7 @@ function Router() {
                         className={TECH_CARD_IMG}
                       />
                       <div className={TECH_CARD_BODY_BORDER}>
-                        <small className='badge'>React</small>
+                        <small className='badge'>ReactJS</small>
                       </div>
                     </div>
                   </div>
@@ -189,21 +190,22 @@ function Router() {
                 data-target='route-algo-a'>
                 <h6>Algorithm Brief</h6>
                 <p>
-                  Problem is like the Traveling Salesman Problem (NP-complete).
-                  Greedy approach does not guaranteed a shortest path, best
-                  approach is to brute force all permutations with Dynamic
-                  Programming. The algorithm runtime is (N
+                  Application problem is like the Traveling Salesman Problem
+                  (NP-complete). Greedy approach does not guarantee a shortest
+                  distance route. Best approach is to brute force all
+                  permutations with dynamic programming. The algorithm runtime
+                  is (N
                   <sup>2</sup> * 2<sup>N</sup>). N factorial (N!), if
-                  implemented without Dynamic Programming.
+                  implemented without dynamic programming.
                 </p>
                 <p>
                   If N is 20, N! = 2,551,082,656,125,828,464,640,000, (N
                   <sup>2</sup> * 2<sup>N</sup>) = 419,430,400.
                 </p>
                 <p className='mb-0'>
-                  The shortest path is build from partial paths by appending
-                  every address and memorized the best. A partial path is
-                  memorized by the last address, address combination and shortest distance.
+                  The shortest route is build by append each stop to partial
+                  route and memorized the best. A partial route is memorized by
+                  the last stop in route, route combination and route cost.
                 </p>
               </div>
 
@@ -247,16 +249,18 @@ function Router() {
                   className={LIST_GROUP_ITEM}
                   target='_blank'
                   rel='noreferrer noopener'>
-                  <span className='fw-bold'>Live app:&nbsp;</span>
-                  https://router-46be8.firebaseapp.com/
+                  <span className='badge'>
+                    Live App:&nbsp; https://router-46be8.firebaseapp.com/
+                  </span>
                 </a>
                 <a
                   href='https://github.com/jinlin2001/router'
                   className={LIST_GROUP_ITEM}
                   target='_blank'
                   rel='noreferrer noopener'>
-                  <span className='fw-bold'>Github:&nbsp;</span>
-                  https://github.com/jinlin2001/router
+                  <span className='badge'>
+                    GitHub:&nbsp; https://github.com/jinlin2001/router
+                  </span>
                 </a>
               </div>
             </div>
