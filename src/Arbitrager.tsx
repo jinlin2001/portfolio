@@ -11,7 +11,6 @@ import {
   TECH_CARD_BODY_BORDER,
   TECH_CARD_IMG,
   TECH_CARD,
-  CARD_FOOTER,
   LIST_GROUP,
   LIST_GROUP_ITEM,
 } from './constants';
@@ -62,6 +61,14 @@ function Arbitrager() {
               href='#booster-captures'
               id='booster-captures-a'>
               IMGs
+            </a>
+          </li>
+          <li className='nav-item'>
+            <a
+              className='btn btn-sm'
+              href='#booster-website'
+              id='booster-website-a'>
+              Links
             </a>
           </li>
         </ul>
@@ -188,9 +195,9 @@ function Arbitrager() {
                 <p>
                   To solve for arbitrage profit opportunity, API data is parsed
                   and modeled as a graph, with exchange rates as edge weights.
-                  Then traversed the graph to find a cycle with cost greater than
-                  1. A cycle cost is the multiplications product of the edges
-                  weight in the cycle.
+                  Then traversed the graph to find a cycle with cost greater
+                  than 1. A cycle cost is the multiplications product of the
+                  edges weight in the cycle.
                 </p>
                 <p>
                   Implemented Bellman-Ford algorithm for negative graph cycle
@@ -207,7 +214,7 @@ function Arbitrager() {
               </div>
 
               <div
-                className='container-fluid pb-1'
+                className='container-fluid'
                 id='booster-captures'
                 data-target='booster-captures-a'>
                 <h6>Screen Captures</h6>
@@ -238,27 +245,31 @@ function Arbitrager() {
                   </div>
                 </div>
               </div>
-            </div>
-            <div className={CARD_FOOTER}>
-              <div className={LIST_GROUP}>
-                <a
-                  href='https://arbitrage-43861.firebaseapp.com/'
-                  className={LIST_GROUP_ITEM}
-                  target='_blank'
-                  rel='noreferrer noopener'>
-                  <span className='badge'>
-                    Live App:&nbsp; https://arbitrage-43861.firebaseapp.com/
-                  </span>
-                </a>
-                <a
-                  href='https://github.com/jinlin2001/arbitrage'
-                  className={LIST_GROUP_ITEM}
-                  target='_blank'
-                  rel='noreferrer noopener'>
-                  <span className='badge'>
-                    GitHub:&nbsp; https://github.com/jinlin2001/arbitrage
-                  </span>
-                </a>
+
+              <div
+                id='booster-website'
+                className='py-3'
+                data-target='booster-website-a'>
+                <div className={LIST_GROUP}>
+                  <a
+                    href='https://arbitrage-43861.firebaseapp.com/'
+                    className={LIST_GROUP_ITEM}
+                    target='_blank'
+                    rel='noreferrer noopener'>
+                    <span className='badge'>
+                      Live App:&nbsp; https://arbitrage-43861.firebaseapp.com/
+                    </span>
+                  </a>
+                  <a
+                    href='https://github.com/jinlin2001/arbitrage'
+                    className={LIST_GROUP_ITEM}
+                    target='_blank'
+                    rel='noreferrer noopener'>
+                    <span className='badge'>
+                      GitHub:&nbsp; https://github.com/jinlin2001/arbitrage
+                    </span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>

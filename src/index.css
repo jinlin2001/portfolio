@@ -24,3 +24,14 @@ small.badge {
 .nav-item a.btn.btn-sm {
   font-size: 0.8rem;
 }
+
+.accordion {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+@media screen and (max-width: 991px) {
+  .accordion {
+    top: 1.8rem;
+  }
+}

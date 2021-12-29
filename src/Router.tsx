@@ -13,7 +13,6 @@ import {
   TECH_CARD_BORDERLESS,
   LIST_GROUP,
   LIST_GROUP_ITEM,
-  CARD_FOOTER,
 } from './constants';
 import { scrollSpy } from './utility';
 
@@ -60,6 +59,14 @@ function Router() {
               href='#route-captures'
               id='route-captures-a'>
               IMGs
+            </a>
+          </li>
+          <li className='nav-item'>
+            <a
+              className='btn btn-sm'
+              href='#route-website'
+              id='route-website-a'>
+              Links
             </a>
           </li>
         </ul>
@@ -210,7 +217,7 @@ function Router() {
               </div>
 
               <div
-                className='container-fluid pb-1'
+                className='container-fluid'
                 id='route-captures'
                 data-target='route-captures-a'>
                 <h6>Screen Captures</h6>
@@ -241,27 +248,30 @@ function Router() {
                   </div>
                 </div>
               </div>
-            </div>
-            <div className={CARD_FOOTER}>
-              <div className={LIST_GROUP}>
-                <a
-                  href='https://router-46be8.firebaseapp.com/'
-                  className={LIST_GROUP_ITEM}
-                  target='_blank'
-                  rel='noreferrer noopener'>
-                  <span className='badge'>
-                    Live App:&nbsp; https://router-46be8.firebaseapp.com/
-                  </span>
-                </a>
-                <a
-                  href='https://github.com/jinlin2001/router'
-                  className={LIST_GROUP_ITEM}
-                  target='_blank'
-                  rel='noreferrer noopener'>
-                  <span className='badge'>
-                    GitHub:&nbsp; https://github.com/jinlin2001/router
-                  </span>
-                </a>
+              <div
+                id='route-website'
+                className='py-3'
+                data-target='route-website-a'>
+                <div className={LIST_GROUP}>
+                  <a
+                    href='https://router-46be8.firebaseapp.com/'
+                    className={LIST_GROUP_ITEM}
+                    target='_blank'
+                    rel='noreferrer noopener'>
+                    <span className='badge'>
+                      Live App:&nbsp; https://router-46be8.firebaseapp.com/
+                    </span>
+                  </a>
+                  <a
+                    href='https://github.com/jinlin2001/router'
+                    className={LIST_GROUP_ITEM}
+                    target='_blank'
+                    rel='noreferrer noopener'>
+                    <span className='badge'>
+                      GitHub:&nbsp; https://github.com/jinlin2001/router
+                    </span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>

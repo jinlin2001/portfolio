@@ -13,8 +13,7 @@ import {
   TECH_CARD,
   TECH_CARD_BODY,
   LIST_GROUP_ITEM,
-  LIST_GROUP,
-  CARD_FOOTER,
+  LIST_GROUP
 } from './constants';
 import { scrollSpy } from './utility';
 
@@ -67,6 +66,14 @@ function MultiChat() {
               href='#chatbox-captures'
               id='chatbox-captures-a'>
               IMGs
+            </a>
+          </li>
+          <li className='nav-item'>
+            <a
+              className='btn btn-sm'
+              href='#chatbox-website'
+              id='chatbox-website-a'>
+              Links
             </a>
           </li>
         </ul>
@@ -218,7 +225,7 @@ function MultiChat() {
               </div>
               <div
                 id='chatbox-captures'
-                className='container-fluid pb-1'
+                className='container-fluid'
                 data-target='chatbox-captures-a'>
                 <h6>Screen Captures</h6>
                 <div className='row row-cols-1 gy-3'>
@@ -260,27 +267,30 @@ function MultiChat() {
                   </div>
                 </div>
               </div>
-            </div>
-            <div className={CARD_FOOTER}>
-              <div className={LIST_GROUP}>
-                <a
-                  href='https://chatbox-3c9c2.firebaseapp.com/'
-                  className={LIST_GROUP_ITEM}
-                  target='_blank'
-                  rel='noreferrer noopener'>
-                  <span className='badge'>
-                    Live App:&nbsp; https://chatbox-3c9c2.firebaseapp.com/
-                  </span>
-                </a>
-                <a
-                  href='https://github.com/jinlin2001/chatbox'
-                  className={LIST_GROUP_ITEM}
-                  target='_blank'
-                  rel='noreferrer noopener'>
-                  <span className='badge'>
-                    GitHub:&nbsp; https://github.com/jinlin2001/chatbox
-                  </span>
-                </a>
+              <div
+                id='chatbox-website'
+                className='py-3'
+                data-target='chatbox-website-a'>
+                <div className={LIST_GROUP}>
+                  <a
+                    href='https://chatbox-3c9c2.firebaseapp.com/'
+                    className={LIST_GROUP_ITEM}
+                    target='_blank'
+                    rel='noreferrer noopener'>
+                    <span className='badge'>
+                      Live App: https://chatbox-3c9c2.firebaseapp.com/
+                    </span>
+                  </a>
+                  <a
+                    href='https://github.com/jinlin2001/chatbox'
+                    className={LIST_GROUP_ITEM}
+                    target='_blank'
+                    rel='noreferrer noopener'>
+                    <span className='badge'>
+                      GitHub: https://github.com/jinlin2001/chatbox
+                    </span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
