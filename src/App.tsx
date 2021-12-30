@@ -72,7 +72,7 @@ function App() {
                   App Builder) and (MCSA: Web Applications) certified.
                 </p>
                 <p>
-                  I enjoy problem solving, passionate to learn new frameworks
+                  I enjoy problem-solving, am passionate to learn new frameworks
                   and libraries, programming patterns, and continue to
                   strengthen my skills in software development.
                 </p>

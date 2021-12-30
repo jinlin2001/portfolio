@@ -80,20 +80,20 @@ function Router() {
                 <h6>App Overview</h6>
                 <p>
                   This web application produces the shortest distance route from
-                  inputs of an origin, a destination and one or more stops.
-                  Application was inspired by food delivery personnel at
-                  restaurants, this web application can help plan the best route
-                  by distance.
+                  inputs of an origin, a destination, and one or more route
+                  stops. The application was inspired by food delivery personnel
+                  at restaurants, this web application can help plan the best
+                  route by distance.
                 </p>
                 <p>
-                  The application calls Google Distance Matrix API and Geocoding
-                  API for distance metrics. With response metrics, application
-                  then runs implemented algorithm to solve for shortest distance
-                  route.
+                  This application calls Google Distance Matrix API and
+                  Geocoding API for distance metrics. With response metrics, the
+                  application then runs implemented algorithm to solve for the
+                  shortest distance route.
                 </p>
                 <p className='mb-0'>
-                  Application scripts are trans-piled targeting latest browsers.
-                  Internet Explorer is not supported.
+                  Application scripts are trans-piled targeting the latest
+                  browsers. Internet Explorer is not supported.
                 </p>
               </div>
 
@@ -197,11 +197,11 @@ function Router() {
                 data-target='route-algo-a'>
                 <h6>Algorithm Brief</h6>
                 <p>
-                  Application problem is like the Traveling Salesman Problem
-                  (NP-complete). Greedy approach does not guarantee a shortest
-                  distance route. Best approach is to brute force all
-                  permutations with dynamic programming. The algorithm runtime
-                  is (N
+                  This is much like the NP-Complete Traveling Salesman problem.
+                  No polynomial runtime algorithm is known, the greedy algorithm
+                  does not guarantee the shortest distance route. The best
+                  approach is to brute-force all possibilities with dynamic
+                  programming. The algorithm runtime is (N
                   <sup>2</sup> * 2<sup>N</sup>). N factorial (N!), if
                   implemented without dynamic programming.
                 </p>
@@ -210,9 +210,10 @@ function Router() {
                   <sup>2</sup> * 2<sup>N</sup>) = 419,430,400.
                 </p>
                 <p className='mb-0'>
-                  The shortest route is build by append each stop to partial
-                  route and memorized the best. A partial route is memorized by
-                  the last stop in route, route combination and route cost.
+                  The shortest distance route is built by appending each route
+                  stop to a partial route and memorizing the best. A partial
+                  route is memorized by the last route stop, the route
+                  combination, and the route cost.
                 </p>
               </div>
 

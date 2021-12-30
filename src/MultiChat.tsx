@@ -13,7 +13,7 @@ import {
   TECH_CARD,
   TECH_CARD_BODY,
   LIST_GROUP_ITEM,
-  LIST_GROUP
+  LIST_GROUP,
 } from './constants';
 import { scrollSpy } from './utility';
 
@@ -87,15 +87,15 @@ function MultiChat() {
                 <h6>App Overview</h6>
                 <p>
                   This is a real-time multi-chat application. Users are allowed
-                  to create one or more rooms and invite friends to join chat.
-                  Each room is isolated and access protected with Firebase
+                  to create one or more chat rooms and invite friends to join.
+                  Chat rooms are isolated, and access protected with Firebase
                   Security Rules.
                 </p>
                 <p className='mb-0'>
                   Other application features include new user signup, login,
                   logout, password reset, search and add new friends.
-                  Application scripts are trans-piled targeting latest browsers.
-                  Internet Explorer is not supported.
+                  Application scripts are trans-piled targeting the latest
+                  browsers. Internet Explorer is not supported.
                 </p>
               </div>
               <div

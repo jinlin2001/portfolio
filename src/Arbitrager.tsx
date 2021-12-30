@@ -83,21 +83,22 @@ function Arbitrager() {
                 <p>
                   This web application fetches currency exchange rates from
                   Frankfurter API. Response data is then parsed and analyzed to
-                  solve for arbitrage profit opportunities.
+                  solve arbitrage profit opportunities.
                 </p>
                 <p>
-                  Frankfurter API tracks 33 world recognized currencies
+                  Frankfurter API tracks 33 world-recognized currencies
                   published by the European Central Bank. According to the API
                   documentation, exchange rates are updated daily around 4 PM
-                  central easter time.
+                  central-eastern time.
                 </p>
                 <p>
-                  Other application features include filter, edit, and import
-                  data in JSON file. Application scripts are trans-piled
-                  targeting latest browsers. Internet Explorer is not supported.
+                  Other application features include filtering, edit, and
+                  importing data in JSON files. Application scripts are
+                  trans-piled targeting the latest browsers. Internet Explorer
+                  is not supported.
                 </p>
                 <span>
-                  Support import JSON file with data structure like the
+                  Support import JSON files with a data structure like the
                   following sample.
                 </span>
                 <pre className='mb-0'>
@@ -193,11 +194,11 @@ function Arbitrager() {
                 data-target='booster-algo-a'>
                 <h6>Algorithm Brief</h6>
                 <p>
-                  To solve for arbitrage profit opportunity, API data is parsed
-                  and modeled as a graph, with exchange rates as edge weights.
-                  Then traversed the graph to find a cycle with cost greater
+                  To solve arbitrage profit opportunities, API data is parsed
+                  and modeled as a graph with exchange rates as edge weights.
+                  Then traversed the graph to find a cycle with a cost greater
                   than 1. A cycle cost is the multiplications product of the
-                  edges weight in the cycle.
+                  weight of the edges in the cycle.
                 </p>
                 <p>
                   Implemented Bellman-Ford algorithm for negative graph cycle
@@ -205,11 +206,11 @@ function Arbitrager() {
                   becomes a negative cycle.
                 </p>
                 <p className='mb-0'>
-                  API data is transformed by applying the math log function then
-                  negation. Applying math log function allows the use of
-                  addition instead of multiplication in calculating cycle cost.
-                  And negation change a positive weight cycle to a negative
-                  weight cycle.
+                  API data is translated by applying the math log function, then
+                  negation. Applying the math log function allows the use of
+                  addition instead of multiplication in calculating cycle costs.
+                  Applying negation transforms a positive weight cycle into a
+                  negative weight cycle.
                 </p>
               </div>
 
